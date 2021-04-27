@@ -10,7 +10,15 @@
   </head>
 
   <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar bg-dark">
+        <div class="container">
+          <%= link_to "Bookers", "/" %>
     <% if user_signed_in? %>
+
+      <li>
+        <%= link_to "Home", user_path(current_user.id) %>
+      </li>
       <li>
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
       </li>
@@ -22,6 +30,9 @@
         <%= link_to "ログイン", new_user_session_path %>
       </li>
     <% end %>
+        </div>
+      </nav>
+    </header>
     <%= yield %>
   </body>
 </html>
