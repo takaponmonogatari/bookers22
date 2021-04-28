@@ -1,1 +1,26 @@
-<h1>Bo</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <%= render "users/list" , book: @book, user: @user %>
+        </div>
+        <div class="col-md-8 offset-md-1">
+<table class="table table-hover table-inverse">
+            
+<h1>Users</h1>
+<tr>
+    <th>image</th>
+    <th>name</th>
+    <th></th>
+</tr>
+<% @users.each do |user| %>
+<tr>
+<th><%= attachment_image_tag user, :profile_image, :fill, 100, 100, format: "jpeg", fallback: "no_image.jpg" %></th>
+<th><%= user.name %></th>
+<th><%= link_to "Show", user_path(user.id) %></th>
+</tr>
+<% end %>
+</table>
+        </div>
+    </div>
+</div>
+

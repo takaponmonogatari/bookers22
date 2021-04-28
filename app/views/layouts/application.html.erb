@@ -4,7 +4,7 @@
     <title>Bookers2</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -20,11 +20,23 @@
         <%= link_to "Home", user_path(current_user.id) %>
       </li>
       <li>
+        <%= link_to "Users", users_path %>
+      </li>
+      <li>
+        <%= link_to "Books", books_path %>
+      </li>
+      <li>
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
       </li>
     <% else %>
       <li>
         <%= link_to "新規登録", new_user_registration_path %>
+      </li>
+      <li>
+        <%= link_to "新規登録", new_user_registration_path %>
+      </li>
+      <li>
+        <%= link_to "about", homes_about_path %>
       </li>
       <li>
         <%= link_to "ログイン", new_user_session_path %>
@@ -33,6 +45,9 @@
         </div>
       </nav>
     </header>
+    <main>
+      <p><%= flash[:notice] %></p>
     <%= yield %>
+    </main>
   </body>
 </html>
