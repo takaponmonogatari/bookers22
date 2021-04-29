@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :ensure_user, only: [:edit, :update]
-  
+
   def index
     @users = User.all
     @user = current_user
@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.update(user_params)
       redirect_to user_path(@user.id)
-      flash[:notice] = "You have updated user succesfully."
+      flash[:notice] = "You have updated user successfully."
     else
       render :edit
       flash[:alert]

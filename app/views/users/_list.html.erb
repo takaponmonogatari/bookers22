@@ -1,7 +1,7 @@
 <% if book.errors.any? %>
  <%= book.errors.count %>error prohibited this obj from being saved:
- <% book.errors.full_messsages.each do |messege| %>
-   <%= messege %>
+ <% book.errors.full_messages.each do |message| %>
+   <%= message %>
   <% end %>
 <% end %>
 
@@ -11,9 +11,9 @@
 <h6>Name</h6>
  <%= user.name %><br>
 <h6>Introduction</h6>
- <%= user.introdution %><br>
+ <%= user.introduction %><br>
  <%= link_to edit_user_path(user) do %>
-  <span class="fas fa-user-cog"></span>
+  <span class="btn btn-outline-secondary btn-block fas fa-user-cog"></span>
  <% end %>
 
  <h1>New book</h1>
